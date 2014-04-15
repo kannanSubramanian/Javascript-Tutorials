@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/xufoc/3/edit
+-->
+<head>
+<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js" id="sap-ui-bootstrap" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m"></script>
+<meta name="description" content="Null and Undefined Javascript"
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+  <div id="div1">Chapter 2 -- Null and Undefined Javascript
+<script>
+// Null In Javascript 
+
+// 1. Null is a primitive type in javascript
+// 2. Null refers to absence of value in a variable.
+// 3. If true of the variable indicated the varaible has value.
+
+console.clear();
+console.log('Null in Javascript');
+
+
+var hasValue = null;
+if(!hasValue)
+  {
+    console.log('value of the varaible is null');
+  }
+
+hasValue = 'true';
+if(hasValue)
+  {
+    console.log(typeof hasValue + ' ' +  hasValue);
+  }
+
+
+// Undefined in Javascript
+
+// 1. Undefined is a primitive type in 
+// 2. Undefined usually occurs when non existant object propery is called
+// 3. Undefined evaluates to false when used in boolean expression.
+
+console.log('UnDefined in Javascript');
+
+
+var xyz;
+console.log(xyz);
+
+if(!xyz)
+  {
+    console.log('undefined evaluates to false in boolean expression');
+  }
+
+var person = { name : 'kannan'};
+
+console.log('Age of the person  : ' + person.age);
+</script>
+</body>
+</html>

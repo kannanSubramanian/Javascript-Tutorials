@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/himow/5/edit
+-->
+<head>
+<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js" id="sap-ui-bootstrap" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m"></script>
+<meta name="description" content="Variables in Javascript"
+  <meta charset="utf-8">
+  <title>Variables in Javascript</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+  <div id="div1">Chapter1 -- Variables in Javascript
+<script>
+console.clear();
+
+var stringVar = 'kannan';
+console.log(typeof stringVar + " " + stringVar);
+
+var numberVar = 49;
+console.log(typeof numberVar + " " + numberVar);
+
+// Global Variables in Javascript
+
+// Neglecting the var keyword make a varaible global varaible
+/* Global varaibles should be avoided as they make a coupling between 2 functions */
+
+function add(number1, number2)
+{
+  a = number1;
+  return a+ number2;
+}
+
+var sum = add(1,2);
+console.log("add(1,2) : " + sum);
+console.log("Value of the global varaible A is " + a);
+var sum1 = add(3,4);
+console.log("add(3,4) : " + sum1);
+console.log("Value of the global varaible  A is " + a);
+</script>
+</body>
+</html>

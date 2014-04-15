@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/cadaq/7/edit
+-->
+<head>
+<meta name="description" content="Javascript Objects" />
+  <meta charset="utf-8">
+  <title>Javascript Objects</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+  <div id="message"></div>
+<script>
+function write(message)
+{
+  document.getElementById('message').innerHTML += message + '<br/>';
+}
+
+// Different ways to represent objects in javascript.
+
+/* 1st way */
+
+var person = new Object();
+person.name = 'kannan';
+person.age = 27;
+
+write("Person name : " + person.name);
+write("Person age : " + person.age);
+
+/* 2nd way : Object Literal notation */
+
+var person1 = {
+  name : 'testuser',
+  age : 27,
+  place : 'Chennai'
+};
+
+write('------ Object Literal notation -----------');
+
+write("Person name : " + person1.name);
+write("Person age : " + person1.age);
+write("Person age : " + person1.place);
+
+
+/* nested objects */
+
+write('------ Nested Objects -----------');
+
+var user = 
+    {
+      fname : 'user1fname',
+      lname : 'user1lname',
+      email : 'user1@email.com',
+      address : {
+      city : 'chennai',
+      pincode : 627413
+      }
+    };
+    
+write('City of the user : ' + user.address.city);
+write('Pincode of the user : ' + user.address.pincode);
+</script>
+</body>
+</html>
