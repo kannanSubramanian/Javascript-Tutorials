@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/leqom/3/edit
+-->
+<head>
+<meta name="description" content="Function in javascript" />
+  <meta charset="utf-8">
+  <title>Function in javascript</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+  <div id="message"></div>
+<script>
+function write(message)
+{
+  document.getElementById('message').innerHTML += message + '<br/>';
+}
+
+// 1. Standard way to invoke function.
+
+function add(x,y)
+{
+  var sum = x+y;
+  return sum;
+}
+
+write('sum(2,4) : ' + add(2,4));
+
+
+
+// 2. Named and Assigned function
+
+var sumOf2Numbers = function sum(x,y)
+{
+   var temp = x+y;
+  return temp;
+};
+
+write('sum(5,5) :  ' + sumOf2Numbers(5,5));
+
+// 3. Anonymous and assigned function
+
+var sumOf2Numbers = function (x,y)
+{
+   var temp = x+y;
+  return temp;
+};
+
+write('sum(10,10) :  ' + sumOf2Numbers(10,10));
+
+// 4 . Anonymous and immediately invoked function
+
+(function(x,y)
+{
+  var sumofTwo = x+y;
+  write('immedaitely invode function Sum (10,10) : ' + sumofTwo);
+})(10,10);
+</script>
+</body>
+</html>

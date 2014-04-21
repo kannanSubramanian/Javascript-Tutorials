@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/suvemi/1/edit
+-->
+<head>
+<meta name="description" content="Functions Advanced" />
+  <meta charset="utf-8">
+  <title>Functions in javascript -- Advanced</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+  <div id="message"></div>
+<script>
+function write(message)
+{
+  document.getElementById('message').innerHTML += message + '<br/>';
+}
+
+write('---------- No function overloading in javascript eg ------------');
+
+// No concept of function overloading in javascript and the 2 function with the same name overrides the first function.
+
+function multiply(num1 , num2, num3)
+{
+  return num1 * num2 * num3 ;
+}
+
+
+function multiply(num1 , num2 )
+{
+  return num1 * num2;
+}
+
+var temp1 = multiply(5,5,5);
+write('multiply(5,5,5) : ' + temp1);
+
+
+write('---------- Javascript ignores extra parameter ------------');
+
+// Javascript supports parameter flexiblity. Extra parameters passed to functions are ignored. Parameter that are not passed are initialized as undefined.
+
+// Javascript eliminates the extra parameter passed to the function.
+
+function sumof2(num1 , num2)
+{
+    return num1 + num2 ;  
+}
+
+var temp = (sumof2(5,2,1));
+write('sum(5,2,1)  : ' + temp );
+
+write('---------- Javascript initialize parameter with undefined that are not passed ------------');
+
+// Parameters that are not passed to functions are initialized as undefined.
+
+function test(num1)
+{
+  return num1;
+}
+
+
+write('Parameter are not passed to the function  : ' + test());
+
+write('----------Pass by value ------------');
+
+// Pass by value.
+// primitive types are passed by value
+
+
+var name = 'kannan';
+
+function passbyvalue(name1)
+{
+  name1 = 'hello ' + name1;
+  return name1;
+}
+
+write('pass by value example : ' + passbyvalue(name));
+write('original value passed : ' + name);
+
+
+write('----------Pass by reference ------------');
+
+// Pass by reference.
+// objects are passed by reference.
+
+var person = { name : 'Globalscholar'};
+
+function passbyreference(person1)
+{
+  person1.name = 'hello ' + person1.name;
+  return person1.name;
+}
+
+write('pass by reference  example : ' + passbyreference(person));
+write('original value passed : ' + person.name);
+</script>
+</body>
+</html>

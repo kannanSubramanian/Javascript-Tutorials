@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/jorog/1/edit
+-->
+<head>
+<meta name="description" content="Closure" />
+  <meta charset="utf-8">
+  <title>Closure</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+  <div id="message"></div>
+<script>
+function write(message)
+{
+  document.getElementById('message').innerHTML += message + '<br/>';
+}
+
+// The inner function can access all the variables in outer scope
+
+write('-------Closure ---------');
+
+var num1 = 10;
+
+var outer = function() 
+{
+   var num2 = 20;
+
+   var inner = function(){        
+        write('closure example  : ' + num1 + num2 ) ;
+      };
+     inner(); 
+      
+};
+
+outer();
+</script>
+</body>
+</html>

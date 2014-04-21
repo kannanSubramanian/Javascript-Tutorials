@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/cakef/4/edit
+-->
+<head>
+<script src="http://jashkenas.github.io/underscore/underscore-min.js"></script>
+<meta name="description" content="Arrays in javascript" />
+  <meta charset="utf-8">
+  <title>Arrays in javascript</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+  <div id="message"></div>
+<script>
+function write(message)
+{
+  document.getElementById('message').innerHTML += message + '<br/>';
+}
+
+// 1. Length property of an array
+// 2. Loop through the array.
+// 3. Push and Pop method.
+// 4. Reverse of array both string and number
+// 5. slice(1,3)
+// 6. splice(index,count of number of charater to remove)
+// 7. sort of charater and number.
+
+
+var number = [10,20,30,40,50];
+
+write('---------Length propery of array----------')
+write('Length of array : ' + number + ' : ' + number.length);
+write('Elements in the number array are');
+for(var i=0;i<number.length;i++){
+  write(number[i]);
+}
+
+// Push method insert the element to the end of the array.
+write('---------Push method in array-------')
+
+number.push(60);
+for(var i=0;i<number.length;i++){
+  write(number[i]);
+}
+
+// Pop method removes the element at the end of the array
+write('---------POP method in array-------')
+
+write('Last element in the array is : ' + number.pop());
+for(var i=0;i<number.length;i++){
+  write(number[i]);
+}
+
+// Reverse the elements in the array
+write('---------Reverese the elements in the array-------<br/>');
+var number1 = number;
+write(number1.reverse());
+
+
+// splice(index,count of number of charater to remove) method --> Remove the elements in the array
+
+write('<br/>---------Splice the elements in the array-------<br/>');
+var array1 = [1,2,3,4,5];
+write(array1 + '.splice(1,3) : ' + array1.splice(1,3));
+write('Elements in array after splice : ' + array1);
+
+// slice(index,end)
+// copies part of the array
+
+write('<br/>---------slice the elements in the array-------<br/>');
+var array2 = [1,2,3,4,5];
+write(array2 + '.slice(1,3) : ' + array2.slice(1,4));
+write('Elements in array after splice : ' + array2);
+
+
+
+// sort method accepts the function and if the function returns 0 the 2 numbers are equal, if the function return -1 then 2 numbers are in correct order, if the function return +1 the 2 numbers need to be swaped.
+
+write('<br/>---------sort the elements in the array-------<br/>');
+
+var temp = [100,-10,200,3,99,99];
+var a = temp.sort(
+            function(first,second)
+             {
+                return first - second;           
+             }
+            );
+write(a);
+</script>
+</body>
+</html>

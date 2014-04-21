@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/wayid/3/edit
+-->
+<head>
+<meta name="description" content="Object Oriented Programming in javascript." />
+  <meta charset="utf-8">
+  <title>Object Oriented Programming in javascript.</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+  <div id="message"></div>
+<script>
+function write(message)
+{
+  document.getElementById('message').innerHTML += message + '<br/>';
+}
+
+function Employee(empId,basicSlaray,hra) {
+    this.empId = empId;
+    this.basicSlaray = basicSlaray;
+    this.hra = hra;
+}
+
+Employee.prototype.empId = '';
+Employee.prototype.basicSlaray = 0;
+Employee.prototype.hra = 0;
+
+Employee.prototype.calculateSalaray = function(basicSlaray,hra) {
+    return basicSlaray+hra;
+}
+
+var emp1 = new Employee('10',100,10);
+var emp2 = new Employee('20',200,20);
+
+write('EmpoyeeId of Employee1 : ' + emp1.empId);
+write('EmpoyeeId of Employee1 : ' + emp2.empId);
+
+write('Salaray of Employee1 : ' + 
+      emp1.calculateSalaray(emp1.basicSlaray,emp1.hra));
+
+write('Salaray of Employee2 : ' + 
+      emp1.calculateSalaray(emp2.basicSlaray,emp2.hra));
+
+
+// -----------Inheritance --------------------------------
+
+function Animal(){ }
+
+Animal.prototype.sayHello = function(){
+  return "Hello from Animal Class";
+}
+
+
+function cat(){ }
+
+cat.prototype = new Animal();
+
+cat.prototype.run = function() {
+  return "Cat runs fast";
+}
+
+
+var c1 = new cat();
+write('SayHello() ' + c1.sayHello());
+write('run() ' + c1.run());
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/dipeh/2/edit
+-->
+<head>
+<meta name="description" content="Arguments object" />
+  <meta charset="utf-8">
+  <title>Arguments object</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+  <div id="message"></div>
+<script>
+function write(message)
+{
+  document.getElementById('message').innerHTML += message + '<br/>';
+}
+
+function multiple()
+{
+  var result = 1;
+  write('Length of the arguments : ' + arguments.length);
+  for(var i=0; i<arguments.length;i++)
+  {
+      result = result * arguments[i];
+  }
+  return result;
+}
+
+
+write('multiply(1,2,3,4,5) : ' + multiple(1,2,3,4,5));
+</script>
+</body>
+</html>

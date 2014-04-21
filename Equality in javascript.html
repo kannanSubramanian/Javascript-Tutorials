@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/xilit/2/edit
+-->
+<head>
+<meta name="description" content="Equality in javascript" />
+  <meta charset="utf-8">
+  <title>Equality in javascript</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+  <div id="message"></div>
+<script>
+function write(message)
+{
+  document.getElementById('message').innerHTML += message + '<br/>';
+}
+
+
+// Objects are only equal  to themselfs
+
+var name = { name : 'kannan'};
+write('name equlas to name :' +  (name === name))
+
+// 2 objects are not equal to each other even though if the value in the object matches 
+
+var obj1 = { name : 'kannan'};
+var obj2 = { name : 'kannan'};
+
+write('obj1 euqals to obj2 : '+ (obj1 === obj2));
+
+// primitive type are equla to each other when the value matches
+
+var a = 100;
+var b = 100;
+
+write('100 === 100 :  ' + (a ===b));
+
+var name = 'kannan';
+var name1 = 'kannan';
+
+
+write('kannan === kannan :  ' + (name ===name1));
+
+// never use == operator as they check only the value and not type
+
+
+write('1 == "1" + ' + (1 == "1"));
+</script>
+</body>
+</html>
